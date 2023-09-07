@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+
+Version=20.3.0.1
+Type=Application
+Name=Viber
+
+
+Terminal=false
+Exec=viber
+
+Keywords=Communication;Privacy;
+Comment=Viber For Desktop
+Categories=Utilities;
