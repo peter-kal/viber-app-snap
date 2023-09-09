@@ -38,7 +38,7 @@ apps:
   viber:
     command: desktop-launch $SNAP/opt/viber/Viber
     desktop: snap/gui/Viber.desktop 
-     environment:
+    environment:
       LD_LIBRARY_PATH: $SNAP/opt/viber/lib:$LD_LIBRARY_PATH
     extensions: [kde-neon]
     plugs: 
