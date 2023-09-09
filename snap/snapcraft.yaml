@@ -2,10 +2,14 @@ name: viber-app
 title: Viber Desktop
 version: 20.3.0.1
 base: core22
+icon: snap/gui/viber-logo.png 
+source-code: https://github.com/peter-kal/viber-app-snap/ 
+issues: https://github.com/peter-kal/viber-app-snap/issues 
 summary: Viber for Desktop.
 description: |
   Free and secure calls and messages to anyone, anywhere, on any device and network, in any country!
   Viber for Desktop syncs your contacts, messages and call history with your mobile device.
+
 
 grade: stable
 confinement: devmode
@@ -32,6 +36,9 @@ parts:
     - libstdc++6
     prime: 
     - opt/viber/Viber 
+    - opt/viber/lib 
+
+    
 
 
 apps:
@@ -40,9 +47,7 @@ apps:
     desktop: snap/gui/Viber.desktop 
     environment:
       LD_LIBRARY_PATH: $SNAP/opt/viber/lib:$LD_LIBRARY_PATH
-      GTK_USE_PORTAL: "1"
-      TMPDIR: $XDG_RUNTIME_DIR
-    extensions: [gnome]
+    extensions: [kde-neon]
     plugs: 
      - home
      - unity7
