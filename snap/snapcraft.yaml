@@ -40,6 +40,8 @@ apps:
     desktop: snap/gui/Viber.desktop 
     environment:
       LD_LIBRARY_PATH: $SNAP/opt/viber/lib:$LD_LIBRARY_PATH
+      GTK_USE_PORTAL: "1"
+      TMPDIR: $XDG_RUNTIME_DIR
     extensions: [gnome]
     plugs: 
      - home
@@ -52,6 +54,5 @@ apps:
      - audio-playback 
      - audio-record 
      - camera
-    environment:
-      GTK_USE_PORTAL: "1"
-      TMPDIR: $XDG_RUNTIME_DIR
+
+      
