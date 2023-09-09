@@ -40,7 +40,7 @@ apps:
     desktop: snap/gui/Viber.desktop 
     environment:
       LD_LIBRARY_PATH: $SNAP/opt/viber/lib:$LD_LIBRARY_PATH
-    extensions: [kde-neon]
+    extensions: [gnome]
     plugs: 
      - home
      - unity7
@@ -52,4 +52,6 @@ apps:
      - audio-playback 
      - audio-record 
      - camera
-
+    environment:
+      GTK_USE_PORTAL: "1"
+      TMPDIR: $XDG_RUNTIME_DIR
