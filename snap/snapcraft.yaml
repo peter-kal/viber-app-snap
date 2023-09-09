@@ -31,14 +31,15 @@ parts:
     - libxcb-xinput0
     - libstdc++6
     prime: 
-    - opt
     - opt/viber/Viber 
-    - opt/viber/lib/libQt6WebEngineCore.so.6
+
 
 apps:
   viber:
     command: desktop-launch $SNAP/opt/viber/Viber
     desktop: snap/gui/Viber.desktop 
+     environment:
+      LD_LIBRARY_PATH: $SNAP/opt/viber/lib:$LD_LIBRARY_PATH
     extensions: [kde-neon]
     plugs: 
      - home
