@@ -10,6 +10,7 @@ description: |
 grade: stable
 confinement: devmode
 compression: lzo 
+architectures: amd64
 
 parts:
   viber:
@@ -30,7 +31,9 @@ parts:
     - libxcb-xinput0
     - libstdc++6
     prime: 
+    - opt
     - opt/viber/Viber 
+    - opt/viber/lib/libQt6WebEngineCore.so.6
 
 apps:
   viber:
