@@ -22,6 +22,8 @@ parts:
     source: http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
     source-type: deb
     stage-packages:
+    - libts-bin
+    - libxkbfile1
     - libpulse0
     - libasound2
     - libnss3
@@ -36,7 +38,7 @@ parts:
     - libstdc++6
     prime: 
     - opt/viber/Viber 
-    - opt/viber/lib 
+    - opt/viber/lib/
 
     
 
@@ -45,8 +47,7 @@ apps:
   viber:
     command: desktop-launch $SNAP/opt/viber/Viber
     desktop: snap/gui/Viber.desktop 
-    environment:
-      LD_LIBRARY_PATH: $SNAP/opt/viber/lib:$LD_LIBRARY_PATH
+    build-attributes: [keep-execstack]
     extensions: [kde-neon]
     plugs: 
      - home
