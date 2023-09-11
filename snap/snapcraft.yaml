@@ -21,6 +21,7 @@ parts:
     plugin: dump
     source: http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
     source-type: deb
+    build-attributes: [keep-execstack]
     stage-packages:
     - libts-bin
     - libxkbfile1
@@ -47,7 +48,6 @@ apps:
   viber:
     command: desktop-launch $SNAP/opt/viber/Viber
     desktop: snap/gui/Viber.desktop 
-    build-attributes: [keep-execstack]
     extensions: [kde-neon]
     plugs: 
      - home
