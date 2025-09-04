@@ -1,19 +1,18 @@
 name: viber-app
 title: Viber Desktop
 version: 20.3.0.1
-base: core22
-icon: snap/gui/viber-logo.png 
-source-code: https://github.com/peter-kal/viber-app-snap/ 
-issues: https://github.com/peter-kal/viber-app-snap/issues 
+base: core24
+icon: snap/gui/viber-logo.png
+source-code: https://github.com/peter-kal/viber-app-snap/
+issues: https://github.com/peter-kal/viber-app-snap/issues
 summary: Viber for Desktop.
 description: |
   Free and secure calls and messages to anyone, anywhere, on any device and network, in any country!
   Viber for Desktop syncs your contacts, messages and call history with your mobile device.
 
-
 grade: stable
 confinement: devmode
-compression: lzo 
+compression: lzo
 architectures: [amd64]
 
 parts:
@@ -21,45 +20,42 @@ parts:
     plugin: dump
     source: http://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
     source-type: deb
+    stage-snaps:
+      - kf6-core24-sdk
     stage-packages:
-    - libts-bin
-    - libxkbfile1
-    - libpulse0
-    - libasound2
-    - libnss3
-    - libgstreamer-plugins-base1.0-0
-    - libgstreamer1.0-0
-    - gstreamer1.0-plugins-base
-    - gstreamer1.0-plugins-good
-    - gstreamer1.0-plugins-ugly
-    - gstreamer1.0-pulseaudio
-    - gstreamer1.0-libav
-    - libxcb-xinput0
-    - libstdc++6
-    prime: 
-    - opt/viber/Viber 
-    - opt/viber/lib/
-
-    
-
+      - libts-bin
+      - libxkbfile1
+      - libpulse0
+      - libasound2
+      - libnss3
+      - libgstreamer-plugins-base1.0-0
+      - libgstreamer1.0-0
+      - gstreamer1.0-plugins-base
+      - gstreamer1.0-plugins-good
+      - gstreamer1.0-plugins-ugly
+      - gstreamer1.0-pulseaudio
+      - gstreamer1.0-libav
+      - libxcb-xinput0
+      - libstdc++6
+    prime:
+      - opt/viber/Viber
+      - opt/viber/lib/
 
 apps:
   viber:
     command: desktop-launch $SNAP/opt/viber/Viber
-    desktop: snap/gui/Viber.desktop 
+    desktop: snap/gui/Viber.desktop
     environment:
       LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/usr/x86_64-linux-gnu/
-    extensions: [kde-neon]
-    plugs: 
-     - home
-     - unity7
-     - network
-     - x11
-     - wayland 
-     - desktop
-     - desktop-legacy
-     - audio-playback 
-     - audio-record 
-     - camera
-
-      
+    extensions: [kde-neon-6]
+    plugs:
+      - home
+      - unity7
+      - network
+      - x11
+      - wayland
+      - desktop
+      - desktop-legacy
+      - audio-playback
+      - audio-record
+      - camera
