@@ -13,7 +13,11 @@ description: |
 grade: stable
 confinement: devmode
 compression: lzo
-architectures: [amd64]
+
+platforms:
+  amd64:
+    build-on: [amd64]
+    build-for: [amd64]
 
 parts:
   viber:
